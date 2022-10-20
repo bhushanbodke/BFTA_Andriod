@@ -1,0 +1,43 @@
+#:kivy 1.0.9
+
+<TabbedPanel>:
+    start:start
+    connect:connect
+
+    do_default_tab:False
+    tab_width:None
+
+    TabbedPanelItem:
+        text: "Receive File"
+        size_hint_x: None
+        width: "400dp"
+        padding: 10, 0
+        BoxLayout:
+            orientation:"vertical"
+            Label:
+                id:start
+                text:"Connect"
+            ProgressBar:
+                id:progress
+                value:0
+                min:0
+                max:100
+                pos_hint:{'x':.1}
+                size_hint_x: .8    
+            Label:
+                id:connect
+                text:""
+            Button:
+                text: "Connect" 
+                on_press:root.change()
+        
+
+    TabbedPanelItem:
+        text: "Send File"
+        size_hint_x: None
+        width: "400dp"
+        padding: 10, 0
+        Label:
+            text: "--------" 
+
+   
